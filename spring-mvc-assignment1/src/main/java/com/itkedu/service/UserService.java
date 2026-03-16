@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.itkedu.exception.UserNotFoundException;
 import com.itkedu.model.User;
 import com.itkedu.repository.UserRepository;
 
@@ -26,7 +27,7 @@ public class UserService {
 		public User getUserById(Long id) {
 			
 			return userRepository.findById(id)
-					.orElseThrow(() -> new RuntimeException("User not found"));
+		            .orElseThrow(() -> new UserNotFoundException("User not found with id " + id));
 		}
 
 		public  User  createUser(@Valid User user) {

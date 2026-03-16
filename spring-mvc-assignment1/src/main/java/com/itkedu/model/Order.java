@@ -1,5 +1,8 @@
 package com.itkedu.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.itkedu.view.Views;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +19,15 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    
+
+    @JsonView(Views.UserDetails.class)
     private String product;
 
+    @JsonView(Views.UserDetails.class)
     private Double total;
 
+    @JsonView(Views.UserDetails.class)
     private String status;
 
     @ManyToOne

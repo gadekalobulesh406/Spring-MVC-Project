@@ -8,9 +8,9 @@ import org.springframework.http.HttpStatus;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleException(RuntimeException ex){
+    public String handleException(UserNotFoundException ex){
 
         return ex.getMessage();
     }
