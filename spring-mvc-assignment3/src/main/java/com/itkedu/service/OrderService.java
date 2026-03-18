@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
 
+import com.itkedu.exception.ResourceNotFoundException;
 import com.itkedu.model.Order;
 import com.itkedu.model.Product;
 import com.itkedu.repository.OrderRepository;
@@ -31,7 +32,7 @@ public class OrderService {
 	public Order getOrder(Long id) {
 		
 		return orderRepository.findById(id)
-				.orElseThrow(() -> new RuntimeException("Order not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Order not found"+ id));
 	}
 
 }

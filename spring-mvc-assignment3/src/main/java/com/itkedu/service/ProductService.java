@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.itkedu.exception.ResourceNotFoundException;
 import com.itkedu.model.Product;
 import com.itkedu.repository.ProductRepository;
 
@@ -23,7 +24,7 @@ public class ProductService {
 		public Product getProduct(Long id) {
 			
 			return productRepository.findById(id)
-					.orElseThrow(() -> new RuntimeException("User not found"));
+					.orElseThrow(() -> new ResourceNotFoundException("User not found"+ id));
 		}
 
 		public Product saveProduct(Product product) {

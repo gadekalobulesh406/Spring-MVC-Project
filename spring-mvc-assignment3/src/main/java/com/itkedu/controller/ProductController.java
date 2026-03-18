@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.itkedu.model.Product;
 import com.itkedu.service.ProductService;
 
+import jakarta.validation.Valid;
 import tools.jackson.databind.ObjectMapper;
 
 @RestController
@@ -60,7 +61,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/{create}")
-	public Product createProduct(@RequestBody Product product) {
+	public Product createProduct(@Valid @RequestBody Product product) {
 		return productService.saveProduct(product);
 	}
 	

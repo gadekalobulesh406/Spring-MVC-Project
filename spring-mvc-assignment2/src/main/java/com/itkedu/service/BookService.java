@@ -5,6 +5,7 @@ import java.awt.print.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.itkedu.reposirtory.BookRepository;
+import com.itkedu.exception.ResourceNotFoundException;
 import com.itkedu.model.Book;
 import org.springframework.data.domain.Page;
 
@@ -23,7 +24,7 @@ public class BookService {
 
     public Book getBookById(Long id){
         return bookRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
+                .orElseThrow(() -> new  ResourceNotFoundException("Book not found with id " + id));
     }
 
     public Book createBook(Book book){
@@ -37,6 +38,7 @@ public class BookService {
         existing.setTitle(book.getTitle());
         existing.setGenre(book.getGenre());
         existing.setPrice(book.getPrice());
+        existing.setAuthor(book.getAuthor());
 
         return bookRepository.save(existing);
     }
