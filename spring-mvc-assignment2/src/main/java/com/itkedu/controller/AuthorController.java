@@ -21,12 +21,12 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @PostMapping
+    @PostMapping("/{createAuthor}")
     public Author createAuthor(@RequestBody Author author){
         return authorService.createAuthor(author);
     }
 
-    @GetMapping
+    @GetMapping("/{getAuthor}")
     public List<Author> getAllAuthors(){
         return authorService.getAllAuthors();
     }

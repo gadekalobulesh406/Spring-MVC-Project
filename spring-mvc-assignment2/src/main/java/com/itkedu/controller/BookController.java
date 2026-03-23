@@ -20,7 +20,7 @@ public class BookController {
 
     // GET all books with pagination & sorting
 
-    @GetMapping
+    @GetMapping("/{getAllBooks}")
     public Page<Book> getAllBooks(Pageable pageable){
         return bookService.getAllBooks(pageable);
     }
@@ -34,7 +34,7 @@ public class BookController {
 
     // POST create book
 
-    @PostMapping
+    @PostMapping("/{createBook}")
     public ResponseEntity<Book> createBook(@RequestBody Book book){
         return ResponseEntity.ok(bookService.createBook(book));
     }

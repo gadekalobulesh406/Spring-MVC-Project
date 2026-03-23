@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.itkedu.model.Author;
-import com.itkedu.reposirtory.AuthorRepository;
+import com.itkedu.repository.AuthorRepository;
 
 @Service
 public class AuthorService {

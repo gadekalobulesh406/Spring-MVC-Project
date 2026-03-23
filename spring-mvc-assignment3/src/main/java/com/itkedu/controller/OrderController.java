@@ -35,7 +35,7 @@ public class OrderController {
 	    return objectMapper.writeValueAsString(savedOrder);
 	}
 	
-	@PostMapping
+	@PostMapping("/{placeOrders}")
 	public Order placeOrder(@RequestBody Order order) {
 		
 		return orderService.placeOrder(order);

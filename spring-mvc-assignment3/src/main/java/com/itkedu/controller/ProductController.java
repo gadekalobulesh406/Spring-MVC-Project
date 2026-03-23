@@ -41,7 +41,7 @@ public class ProductController {
 	}
 	
 	//to get the all created product using object mapper
-	@GetMapping("/{allProducts}")
+	@GetMapping("/{gatAllProduct}")
 	public String getAllProduct() throws Exception {
 
 	    List<Product> products = productService.getAllProducts();
@@ -49,7 +49,7 @@ public class ProductController {
 	    return objectMapper.writeValueAsString(products);
 	}
 	
-	@GetMapping
+	@GetMapping("/getAllProducts")
 	public List<Product> getAllProducts(){
 		return productService.getAllProducts();
 	}

@@ -21,12 +21,12 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @PostMapping
+    @PostMapping("/{create}")
     public Customer create(@RequestBody Customer customer){
         return customerService.save(customer);
     }
 
-    @GetMapping
+    @GetMapping("/{getAll}")
     public List<Customer> getAll(){
         return customerService.getAll();
     }

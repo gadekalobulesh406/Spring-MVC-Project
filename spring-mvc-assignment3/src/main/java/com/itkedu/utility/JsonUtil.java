@@ -4,9 +4,13 @@ import org.springframework.stereotype.Component;
 
 import tools.jackson.databind.ObjectMapper;
 
+//import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 @Component
 public class JsonUtil {
 
+	//com.fasterxml.jackson.core  is relocated to jackson-databind 
 	private  ObjectMapper objectMapper;
 	
 	public JsonUtil(ObjectMapper objectMapper) {

@@ -1,4 +1,4 @@
-package com.itkedu.reposirtory;
+package com.itkedu.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

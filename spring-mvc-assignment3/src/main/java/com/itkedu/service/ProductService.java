@@ -24,7 +24,7 @@ public class ProductService {
 		public Product getProduct(Long id) {
 			
 			return productRepository.findById(id)
-					.orElseThrow(() -> new ResourceNotFoundException("User not found"+ id));
+					.orElseThrow(() ->  new ResourceNotFoundException("Product not found with id " + id));
 		}
 
 		public Product saveProduct(Product product) {
@@ -44,5 +44,10 @@ public class ProductService {
 		public void deleteProduct(Long id) {
 			productRepository.deleteById(id);
 			
+		}
+
+		public Object getAll() {
+			// TODO Auto-generated method stub
+			return null;
 		}
 }

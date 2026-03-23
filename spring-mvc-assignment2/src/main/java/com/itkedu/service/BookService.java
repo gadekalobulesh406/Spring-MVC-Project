@@ -1,12 +1,11 @@
 package com.itkedu.service;
 
-import java.awt.print.Pageable;
-
 import org.springframework.stereotype.Service;
 
-import com.itkedu.reposirtory.BookRepository;
 import com.itkedu.exception.ResourceNotFoundException;
 import com.itkedu.model.Book;
+import com.itkedu.repository.BookRepository;
+
 import org.springframework.data.domain.Page;
 
 @Service
